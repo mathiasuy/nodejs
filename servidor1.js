@@ -8,4 +8,4 @@ function arrancaServidor(requiere, respuesta){
 	respuesta.end();
 }
 
-servidor.createServer(arrancaServidor).listen(8888); //crea un servidor arrancaServidor y se queda escuchando peticiones en el puerto 8888
+servidor.createServer(arrancaServidor).listen(8080); //crea un servidor arrancaServidor y se queda escuchando peticiones en el puerto 8080
