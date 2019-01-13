@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        title Tienda
+        link(rel="stylesheet", href="/css/estilos.css")
+        meta(name="viewport", content="width=, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    body
+        
+        block content
+            h1  
+                a(href="../") Tienda de camisetas
+            div.agregar
+                a(href="/agregar") Agregar
+
+        div.contenedor
+            each camiseta in camisetas 
+                //- div.item es... 
+                div.item
+                    h2 Camiseta #{camiseta.color}
+                    img(src="/images/"+camiseta.imagen, alt="camiseta")
+                    small Descripcion: #{camiseta.descripcion}
+                    small Precio $#{camiseta.precio}
+                    a(href="tienda/comprar/" + camiseta.color) Comprar        
+            
+        include chat.pug
+
+        script(src="http://cdn.socket.io/socket.io-1.2.0.js")
+        script(src="http://code.jquery.com/jquery-1.11.1.js")
+
+        script.
+            var soquet = io();
+
+            $('form').submit(()=>{
+                socket.emit('chat message', $('#m').val());
+                $('#m').val('');
+                return false;
+            })
+
+            socket.on('chat message', (msg)=>{
+                $('#messages').prepend($('<li>').text(msg));
+            })

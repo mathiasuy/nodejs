@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        title Agregar
+    body
+        h1 Agregar nueva característica
+
+        div.contenedor
+            form(name="agregarItem", action="/agregar", method="post")
+                label(for="color") Color
+                input(type="text", name="color")
+                br
+                br
+                label(for="imagen") Imágen
+                input(type="text", name="imagen")
+                br
+                br
+                label(for="precio") Precio
+                input(type="text", name="precio")
+                br
+                br
+                label(for="descripcion") Descripción
+                input(type="text", name="descripcion")
+                br
+                br
+                input(type="submit", value="Guardar")
