@@ -3,8 +3,7 @@ function inicio(respuesta){
 
 	/*	ESTO ES UN CÓDIGO BLOQUEANTE	*/
 	/*
-	v
-	ar ahora = new Date().getTime(); //recibo el tiempo ahora en milisengundos
+	var ahora = new Date().getTime(); //recibo el tiempo ahora en milisengundos
 	while (new Date().getTime() < ahora + 5000);//paralizo el programa por 5 segundos
 	*/
 	/*
