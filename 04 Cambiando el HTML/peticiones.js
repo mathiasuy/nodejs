@@ -1,5 +1,10 @@
 function inicio(){
 	console.log("Has entrado a la página de inicio");
+
+	/*	ESTO ES UN CÓDIGO BLOQUEANTE	*/
+	var ahora = new Date().getTime(); //recibo el tiempo ahora en milisengundos
+	while (new Date().getTime() < ahora + 5000);//paralizo el programa por 5 segundos
+
 	return "Inicio";
 }
 
