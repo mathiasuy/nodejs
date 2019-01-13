@@ -1,0 +1,19 @@
+doctype HTML
+html(lang="es")
+    head
+        meta(charset="UTF-8")
+        title Tienda
+        link(rel="stylesheet", href="/css/estilos.css")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    body
+        h1  
+            a(href="../") Tienda de camisetas
+
+            // nombre del arreglo que estamos recorriendo
+            each camiseta in camisetas 
+                //- div.item es... 
+                div.item
+                    h2 Camiseta #{camiseta.color}
+                    img(src=camiseta.imagen, alt="camiseta")
+                    a(href="tienda/comprar/" + camiseta.color) Comprar
