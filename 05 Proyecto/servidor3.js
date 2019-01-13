@@ -6,12 +6,23 @@ function iniciar(enrutar, manejador){// recibo la funcion que esta en enrutador.
 	function arrancaServidor(requiere, respuesta){
 		var ruta = url.parse(requiere.url).pathname; //capturar aquello que ponga en la url e introducirlo en una variable 'ruta'
 
+		if (ruta == "/favicon.ico"){
+			var index = fs.readFileSync("www"+ruta);
+		}else{
+			if (ruta == "/"){
+				ruta = "/index";
+			}	
+			var index = fs.readFileSync("www"+ruta+".html");
+		}
+
+
 		console.log("Hola consola, alguien se ha conectado");  // cada vez que alguien se conecte al servidor  web se verá este mensaje en la consola
 		//ese mensaje aparecerá 2 veces en la consola, porque el navegador suele enviar 2 peticiones, una para el favicon y otra para la página web en sí.
 
 		//var contenido = enrutar(ruta, manejador, respuesta);	//le paso a la funcion el path de la url donde estoy parado
 
-		var index = fs.readFileSync("www/"+ruta+".html");
+
+		
 
 		var registro = fs.createWriteStream('registro.txt',{'flags':'a'});//pongo una bandera para indicar que quiero agregar (append) contenido
 		registro.write(ruta + '\n');

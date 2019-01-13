@@ -75,3 +75,12 @@
 /favicon.ico
 /pagina1
 /favicon.ico
+index
+index
+index
+/index
+/favicon.ico
+/pagina1
+/favicon.ico
+/pagina2
+/favicon.ico
